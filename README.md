@@ -1,5 +1,5 @@
 # VS2017 TACO Update
-This package updates the Visual Studio Tools for Apache Cordova to use Cordova @7.1.0 and Cordova-Android @6.3.0
+This package updates the Visual Studio Tools for Apache Cordova for VS 2017 to use Cordova @7.1.0 and Cordova-Android @6.3.0
 
 # Installation instructions
 1. Find the folder where Visual Studio stores the taco-toolset, (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA, in my case it was C:\ProgramData\Microsoft\VisualStudio\MDA\284aeaec)

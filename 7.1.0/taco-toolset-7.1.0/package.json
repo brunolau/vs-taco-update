@@ -1,0 +1,19 @@
+{
+  "name": "taco-toolset",
+  "version": "7.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cordova": "7.1.0",
+    "cordova-simulate": "0.3.13"
+  },
+  "bundleDependencies": [
+    "cordova",
+    "cordova-simulate"
+  ]
+}

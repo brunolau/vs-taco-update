@@ -35,30 +35,33 @@ var beforePrepare = function (data) {
 var afterCompile = function (data) {
     // Instead of a build, we call prepare and then compile
     // trigger the after_build in case users expect it
-    var hooksRunner = new HooksRunner(data.projectRoot || data.root);
-    console.log("TACO update - APK copy to folder structure copatible with TACO tooling...");
 
     var fs = require('fs');
     var path = require('path');
-    var rootdir = process.argv[2];
+    var rootdir = data.projectRoot;
+    var hooksRunner = new HooksRunner(data.projectRoot || data.root);
+    var performCopy = function (srcDir, destDir, fileName) {
+        var srcFile = path.join(rootdir, srcDir + fileName);
+        var destFile = path.join(rootdir, destDir + fileName);
+        var destDir = path.dirname(destFile);
 
-    var srcfile = path.join(rootdir, "platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk");
-    var destfile = path.join(rootdir, "platforms\\android\\build\\outputs\\apk\\app-debug.apk");
-
-    var destdir = path.dirname(destfile);
-    if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {
-        fs.createReadStream(srcfile).pipe(
-            fs.createWriteStream(destfile));
+        if (fs.existsSync(srcFile) && fs.existsSync(destDir)) {
+            fs.createReadStream(srcFile).pipe(fs.createWriteStream(destFile));
+        }
     }
 
-    srcfile = path.join(rootdir, "platforms\\android\\app\\build\\outputs\\apk\\debug\\output.json");
-    destfile = path.join(rootdir, "platforms\\android\\build\\outputs\\apk\\output.json");
-
-    destdir = path.dirname(destfile);
-    if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {
-        fs.createReadStream(srcfile).pipe(
-            fs.createWriteStream(destfile));
+    var attemptCopy = function (srcDir, destDir) {
+        performCopy(srcDir, destDir, 'app-debug.apk');
+        performCopy(srcDir, destDir, 'android-debug.apk');
+        performCopy(srcDir, destDir, 'output.json');
     }
+
+    console.log("TACO update - APK copy to folder structure compatible with TACO tooling...");
+    console.log('TACO update - Rootdir is: "' + rootdir + '"');
+
+    //Paths may differ depending on installed build tools
+    attemptCopy('platforms\\android\\build\\outputs\\apk\\debug\\', 'platforms\\android\\build\\outputs\\apk\\');
+    attemptCopy('platforms\\android\\app\\build\\outputs\\apk\\debug\\', 'platforms\\android\\build\\outputs\\apk\\');
 
     console.log("TACO update - APK copy complete...");
     hooksRunner.fire('after_build', data);

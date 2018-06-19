@@ -52,7 +52,9 @@ var afterCompile = function (data) {
 
     var attemptCopy = function (srcDir, destDir) {
         performCopy(srcDir, destDir, 'app-debug.apk');
+        performCopy(srcDir, destDir, 'app-release.apk');
         performCopy(srcDir, destDir, 'android-debug.apk');
+        performCopy(srcDir, destDir, 'android-release.apk');
         performCopy(srcDir, destDir, 'output.json');
     }
 
@@ -62,6 +64,8 @@ var afterCompile = function (data) {
     //Paths may differ depending on installed build tools
     attemptCopy('platforms\\android\\build\\outputs\\apk\\debug\\', 'platforms\\android\\build\\outputs\\apk\\');
     attemptCopy('platforms\\android\\app\\build\\outputs\\apk\\debug\\', 'platforms\\android\\build\\outputs\\apk\\');
+    attemptCopy('platforms\\android\\build\\outputs\\apk\\release\\', 'platforms\\android\\build\\outputs\\apk\\');
+    attemptCopy('platforms\\android\\app\\build\\outputs\\apk\\release\\', 'platforms\\android\\build\\outputs\\apk\\');
 
     console.log("TACO update - APK copy complete...");
     hooksRunner.fire('after_build', data);

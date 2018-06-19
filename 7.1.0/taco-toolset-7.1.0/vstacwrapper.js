@@ -1,6 +1,9 @@
-﻿/********************************************************
+/********************************************************
 *                                                       *
 *   Copyright (C) Microsoft. All rights reserved.       *
+*                                                       *
+*    Compatibility update by Bruno Laurinec, 2018       *
+* based on https://stackoverflow.com/a/49270052/1264729 *
 *                                                       *
 ********************************************************/
 "use strict";
@@ -33,6 +36,31 @@ var afterCompile = function (data) {
     // Instead of a build, we call prepare and then compile
     // trigger the after_build in case users expect it
     var hooksRunner = new HooksRunner(data.projectRoot || data.root);
+    console.log("TACO update - APK copy to folder structure copatible with TACO tooling...");
+
+    var fs = require('fs');
+    var path = require('path');
+    var rootdir = process.argv[2];
+
+    var srcfile = path.join(rootdir, "platforms\\android\\app\\build\\outputs\\apk\\debug\\app-debug.apk");
+    var destfile = path.join(rootdir, "platforms\\android\\build\\outputs\\apk\\app-debug.apk");
+
+    var destdir = path.dirname(destfile);
+    if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {
+        fs.createReadStream(srcfile).pipe(
+            fs.createWriteStream(destfile));
+    }
+
+    srcfile = path.join(rootdir, "platforms\\android\\app\\build\\outputs\\apk\\debug\\output.json");
+    destfile = path.join(rootdir, "platforms\\android\\build\\outputs\\apk\\output.json");
+
+    destdir = path.dirname(destfile);
+    if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {
+        fs.createReadStream(srcfile).pipe(
+            fs.createWriteStream(destfile));
+    }
+
+    console.log("TACO update - APK copy complete...");
     hooksRunner.fire('after_build', data);
 }
 

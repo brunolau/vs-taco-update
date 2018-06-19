@@ -37,4 +37,7 @@ Creating a custom Toolset for TACO isn't that difficult as it might seem at the 
 15. In the taco-toolset-7.1.0 folder, edit the versions.json file and set the approperiate versions in there (cordova, node, npm). Here you also specify the Cordova-android version used by the toolset
 16. In the same folder, edit the package.json file, again, replace the "6.3.1" version with your own (7.1.0)
 17. Your custom toolset is now ready, just copy it next to the taco-toolset-6.3.1 folder, close all Visual studio instances and you are good to go
-18. In case there are some compatibiltiy issues that could be solved by hooks, you can also edit the vstacwrapper.js file where you can apply global hooks that fix the incompatibilities
+
+
+
+Note that starting with Cordova-Android @6.4.0 the output structure changed and in order to build succesfully, you also need to patch the vstacwrapper.js file. See my implementation (in the 7.1.0 tooling) for more details

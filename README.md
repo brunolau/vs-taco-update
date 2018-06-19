@@ -6,7 +6,7 @@ This package updates the Visual Studio Tools for Apache Cordova for VS 2017 to u
 
 2. Copy the taco-toolset-7.1.0 folder to the directory identified in previous step so that you now have 2 toolsets in the directory (taco-toolset-6.3.1, taco-toolset-7.1.0)
 
-3. Locate the Android SDK that TACO uses (default in C:\ProgramData\Microsoft\AndroidSDK\25) and ensure you have installed Android SDK version 26 (you may use the attached SDKManager.exe, or you can use Android studio to update). To ensure you have the SDK 26, look into the "platforms" directory, you should have "android-26" in there if everything's setup correctly. If you skip this step, build will stop with error stating something like "you have to agree on license for Android SDK 26"
+3. Locate the Android SDK that TACO uses (default in C:\ProgramData\Microsoft\AndroidSDK\25) and ensure you have installed Android SDK version 26 (you may use the attached SDKManager.exe, or you can use Android studio to update). To ensure you have the SDK 26, look into the "platforms" directory, you should have "android-26" in there if everything's setup correctly. If you skip this step, build will stop with error stating something like "you have to agree on license for Android SDK 26". Also ensure you have update the build-Tools if necessary for your project). This all could be done in the SDK Manager
 
 4. Close all instances of Visual Studio and re-open them
 

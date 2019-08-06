@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "cordova": "9.0.0",
+  "node": "10.16.0",
+  "npm": "6.9.0",
+  "cordova-simulate": "0.3.13",
+  "cordova-android": "8.0.0",
+  "cordova-ios": "5.0.1",
+  "cordova-windows": "4.4.2"
+}

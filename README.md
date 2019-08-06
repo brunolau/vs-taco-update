@@ -1,18 +1,24 @@
 # VS2017 TACO Update
-This package updates the Visual Studio Tools for Apache Cordova for VS 2017 to use Cordova @7.1.0 and Cordova-Android @6.3.0
+This package updates the Visual Studio Tools for Apache Cordova for VS 2017 to use higher Cordova and Cordova-Android versions.
+
+Currently supported:
+Cordova@7.1.0 with Cordova-Android@6.3.0
+Cordova@9.0.0 with Cordova-Android@8.0.0
 
 # Installation instructions
-1. Find the folder where Visual Studio stores the taco-toolset, (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA, in my case it was C:\ProgramData\Microsoft\VisualStudio\MDA\284aeaec)
+1. Find the folder where Visual Studio stores the taco-toolset, (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA)
 
-2. Copy the taco-toolset-7.1.0 folder to the directory identified in previous step so that you now have 2 toolsets in the directory (taco-toolset-6.3.1, taco-toolset-7.1.0)
+2. Copy the chosen taco-toolset [from the 7.1.0. or 9.0.0] folder to the directory identified in previous step so that you now have 2 toolsets in the directory (the default taco-toolset-6.3.1 and the new taco toolset of your choice [e.g. taco-toolset-9.0.0])
 
-3. Locate the Android SDK that TACO uses (default in C:\ProgramData\Microsoft\AndroidSDK\25) and ensure you have installed Android SDK version 26 (you may use the attached SDKManager.exe, or you can use Android studio to update). To ensure you have the SDK 26, look into the "platforms" directory, you should have "android-26" in there if everything's setup correctly. If you skip this step, build will stop with error stating something like "you have to agree on license for Android SDK 26". Also ensure you have update the build-Tools if necessary for your project). This all could be done in the SDK Manager
+3. Important step - Locate the Android SDK that TACO uses (default in C:\ProgramData\Microsoft\AndroidSDK\25) and ensure you have installed Android SDK version 26 (you may use the attached SDKManager.exe, or you can use Android studio to update). To ensure you have the SDK 26, look into the "platforms" directory, you should have "android-26" in there if everything's setup correctly. If you skip this step, build will stop with error stating something like "you have to agree on license for Android SDK 26". Also ensure you have update the build-Tools if necessary for your project). This all could be done in the SDK Manager
 
-4. Close all instances of Visual Studio and re-open them
+4. Delete node_modules, package.json in your Cordova App's root folder
 
-5. In your project, double-click config.xml, choose the "Toolset" tab on the left. Now look for the "Toolset name" dropdown. There should be new addition "Cordova 7.1.0". Select it and save your config.xml
+5. Close all instances of Visual Studio and re-open them
 
-6. Build your project, your project will now be built using Cordova @7.1.0 and Cordova-Android @6.3.0
+6. In your project, double-click config.xml, choose the "Toolset" tab on the left. Now look for the "Toolset name" dropdown. There should be new addition "Cordova 9.0.0". Select it and save your config.xml
+
+6. Build your project, your project will now be built using Cordova @9.0.0 and Cordova-Android @8.0.0
 
 
 

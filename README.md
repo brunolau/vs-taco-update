@@ -2,7 +2,7 @@
 This package updates the Visual Studio Tools for Apache Cordova for VS 2017 to use higher Cordova and Cordova-Android versions.
 
 Currently supported:
-Cordova@7.1.0 with Cordova-Android@6.3.0
+Cordova@7.1.0 with Cordova-Android@6.3.0, 
 Cordova@9.0.0 with Cordova-Android@8.0.0
 
 # Installation instructions
@@ -31,19 +31,20 @@ Creating a custom Toolset for TACO isn't that difficult as it might seem at the 
 3. Open command prompt (type cmd.exe) and launch it as Administrator
 4. Navigate to the newly created directory (cd C:\Taco), this will be the folder, where npm will store the libraries we are about to download
 5. Install the desired cordova version (npm install cordova@7.1.0) [don't use the -g switch]
-6. Install npm (npm install npm) [don't use the -g switch], this should add npm into the node_modules directory
-7. Type "npm shrinkwrap" into the command prompt and execute it
-8. Navigate to VS TACO directory (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA, in my case it was C:\ProgramData\Microsoft\VisualStudio\MDA\284aeaec)
-9. Copy the taco-toolset-6.3.1 into another folder and name it according to the cordova version you are about to install (e.g. taco-toolset-7.1.0, I will call it this way for the rest of the tutorial)
-10. Now the fun begins. In this copied folder (taco-toolset-7.1.0), delete the node_modules, node.exe, npm-shrinkwrap.json
-11. From the C:\Taco folder, copy the node_modules folder and npm-shrinkwrap.json into the taco-toolset-7.1.0 folder
-12. Copy node.exe from the Node.js installation directory to ensure you have latest Node.js in your toolset (default location being C:\Program Files\nodejs)
-13. In the command prompt, execute "node --version" command, this will output the Node.js version (e.g. 8.11.3)
-14. In the command prompt, execute "npm -version", this will output the NPM version (e.g. 5.6.0)
-15. In the taco-toolset-7.1.0 folder, edit the versions.json file and set the approperiate versions in there (cordova, node, npm). Here you also specify the Cordova-android version used by the toolset
-16. In the same folder, edit the package.json file, again, replace the "6.3.1" version with your own (7.1.0)
-17. Your custom toolset is now ready, just copy it next to the taco-toolset-6.3.1 folder, close all Visual studio instances and you are good to go
+6. Install the latest cordova-simulator package (npm install cordova-simulator) [don't use the -g switch]
+7. Install npm (npm install npm) [don't use the -g switch], this should add npm into the node_modules directory
+8. Type "npm shrinkwrap" into the command prompt and execute it
+9. Navigate to VS TACO directory (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA, in my case it was C:\ProgramData\Microsoft\VisualStudio\MDA\284aeaec)
+10. Copy the taco-toolset-6.3.1 into another folder and name it according to the cordova version you are about to install (e.g. taco-toolset-7.1.0, I will call it this way for the rest of the tutorial)
+11. Now the fun begins. In this copied folder (taco-toolset-7.1.0), delete the node_modules, node.exe, npm-shrinkwrap.json
+12. From the C:\Taco folder, copy the node_modules folder and npm-shrinkwrap.json into the taco-toolset-7.1.0 folder
+13. Copy node.exe from the Node.js installation directory to ensure you have latest Node.js in your toolset (default location being C:\Program Files\nodejs)
+14. In the command prompt, execute "node --version" command, this will output the Node.js version (e.g. 8.11.3)
+15. In the command prompt, execute "npm -version", this will output the NPM version (e.g. 5.6.0)
+16. In the taco-toolset-7.1.0 folder, edit the versions.json file and set the approperiate versions in there (cordova, node, npm). Here you also specify the Cordova-android version used by the toolset
+17. In the same folder, edit the package.json file, again, replace the "6.3.1" version with your own (7.1.0)
+18. Your custom toolset is now ready, just copy it next to the taco-toolset-6.3.1 folder, close all Visual studio instances and you are good to go
 
 
 
-Note that starting with Cordova-Android @6.4.0 the output structure changed and in order to build succesfully, you also need to patch the vstacwrapper.js file. See my implementation (in the 7.1.0 tooling) for more details
+Note that starting with Cordova-Android @6.4.0 the output structure changed and in order to build succesfully, you also need to patch the vstacwrapper.js file. See my implementation (in the 9.0.0 tooling) for more details

@@ -30,8 +30,8 @@ Creating a custom Toolset for TACO isn't that difficult as it might seem at the 
 2. Create a directory on your root (e.g. C:\Taco, I will call it this way for the rest of the tutorial)
 3. Open command prompt (type cmd.exe) and launch it as Administrator
 4. Navigate to the newly created directory (cd C:\Taco), this will be the folder, where npm will store the libraries we are about to download
-5. Install the desired cordova version (npm install cordova@7.1.0) [don't use the -g switch]
-6. Install the latest cordova-simulator package (npm install cordova-simulator) [don't use the -g switch]
+5. NPM Install the desired cordova version (npm install cordova@7.1.0) [don't use the -g switch]
+6. NPM Install the latest versions of cordova-simulator, socket.io-client and cordova-simulate package [don't use the -g switch]
 7. Install npm (npm install npm) [don't use the -g switch], this should add npm into the node_modules directory
 8. Type "npm shrinkwrap" into the command prompt and execute it
 9. Navigate to VS TACO directory (it should be located somewhere in C:\ProgramData\Microsoft\VisualStudio\MDA, in my case it was C:\ProgramData\Microsoft\VisualStudio\MDA\284aeaec)

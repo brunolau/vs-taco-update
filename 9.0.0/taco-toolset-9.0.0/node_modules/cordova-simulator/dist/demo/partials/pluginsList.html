@@ -1,0 +1,9 @@
+<ion-view view-title="Demo App">
+    <ion-content>
+        <a class="item {{plugin.icon ? 'item-icon-left' : ''}} item-icon-right" ng-repeat="(name, plugin) in plugins" ng-href="#/{{name}}">
+            <i class="icon {{plugin.icon}}" ng-if="plugin.icon"></i>
+            {{plugin.title}}
+            <i class="icon ion-arrow-right-c"></i>
+        </a>
+    </ion-content>
+</ion-view>

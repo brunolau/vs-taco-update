@@ -1,0 +1,23 @@
+<ion-view view-title="Clipboard">
+    <ion-content>
+        <div class="list card">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Text to copy</span>
+                <input type="text" placeholder="Text" ng-model="text">
+            </label>
+            <div class="padding">
+                <button class="button button-block button-balanced" ng-click="copy(text)">
+                    Copy
+                </button>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-calm" ng-click="paste()">
+                    Paste
+                </button>
+            </div>
+            <a href="#" class="item">
+                Text: {{pastedText}}
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -60,6 +60,22 @@ var beforePrepare = function (data) {
     hooksRunner.fire('before_build', data);
 }
 
+var afterPlatformAdd = function (data) {
+    var fs = require('fs');
+    var path = require('path');
+    var rootdir = data.projectRoot;
+    var dirPath = path.join(rootdir, 'platforms\\android');
+    console.log("TACO update - creating legacy directory structure to trick outdates VS TACO to think everything is setup");
+
+    if (fs.existsSync(dirPath)) {
+        var legacyDir = path.join(dirPath, 'assets\\www');
+        var legacyIndexPath = path.join(legacyDir, 'index.html');
+        fs.mkdirSync(legacyDir, { recursive: true });
+        fs.writeFileSync(legacyIndexPath, '<html></html>');
+        console.log("TACO update - dummy legacy assets created successfully");
+    }
+}
+
 var afterCompile = function (data) {
     // Instead of a build, we call prepare and then compile
     // trigger the after_build in case users expect it
@@ -121,6 +137,10 @@ var afterCompile = function (data) {
 // Custom hooks
 cordova.on('before_prepare', beforePrepare);
 cordova.on('after_compile', afterCompile);
+cordova.on('after_platform_add', afterPlatformAdd);
+cordova.on('before_deploy', function () {
+    console.log('idem deployovat...');
+});
 
 cordova.on('results', function (message) {
     console.log(message);

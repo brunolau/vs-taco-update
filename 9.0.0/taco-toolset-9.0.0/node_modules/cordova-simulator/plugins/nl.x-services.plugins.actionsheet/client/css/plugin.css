@@ -1,0 +1,88 @@
+.actionsheet.platform-android {
+    background: white;
+    min-width: 250px;
+}
+
+.actionsheet.platform-android h6 {
+    background: black;
+    color: white;
+    padding: 10px;
+    margin: 0 0;
+}
+
+.actionsheet.platform-android a {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    background: white;
+    padding-top: 10px;
+    padding-left: 5px;
+    height: 40px;
+    border-bottom: 1px solid rgb(203, 203, 203);
+    display: block;
+}
+
+.actionsheet.platform-android .cancelButtonContainer {
+    text-align: center;
+    padding: 5px;
+    background: #949494;
+}
+
+.actionsheet.platform-android .cancelButton {
+    width: 150px;
+    height: 30px;
+}
+
+.actionsheet.platform-ios {
+    text-align: center;
+    min-width: 250px;
+}
+
+.actionsheet.platform-ios h6 {
+    background: rgb(228, 228, 228);
+    color: #9C9C9C;
+    padding: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgb(203, 203, 203);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.actionsheet.platform-ios a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #388CFB;
+    background: rgb(228, 228, 228);
+    padding-top: 10px;
+    padding-left: 5px;
+    height: 40px;
+    border-bottom: 1px solid rgb(203, 203, 203);
+    display: block;
+    font-weight: 600;
+}
+
+.actionsheet.platform-ios a.destructive {
+    color: red;
+}
+
+.actionsheet.platform-ios a:last-of-type {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.actionsheet.platform-ios .cancelButtonContainer {
+    margin-top: 10px;
+    border-radius: 4px;
+    background: rgb(228, 228, 228);
+}
+
+.actionsheet.platform-ios .cancelButton {
+    font-weight: 600;
+    background-color: transparent;
+    box-shadow: none;
+    border-color: transparent;
+    outline: none;
+    height: 40px;
+    color: #388CFB;
+}

@@ -1,0 +1,18 @@
+<form>
+    <div class="form-group">
+        <label>Path</label>
+        <p class="form-control-static">{{apps[currApp].path}}</p>
+    </div>
+    <div class="form-group">
+        <label for="appConfigVersion">Version</label>
+        <input type="text" class="form-control" id="appConfigVersion" placeholder="Enter version" ng-model="apps[currApp].version">
+    </div>
+    <div class="form-group">
+        <label for="appConfigSplashScreen">Splash Screen</label>
+        <input type="text" class="form-control" id="appConfigSplashScreen" placeholder="Enter splash screen URL" ng-model="apps[currApp].splashScreen">
+    </div>
+    <div class="form-group">
+        <label for="appConfigSplashScreenDelay">Splash Screen Delay</label>
+        <input type="number" class="form-control" id="appConfigSplashScreenDelay" placeholder="Enter splash screen delay" ng-model="apps[currApp].splashScreenDelay">
+    </div>
+</form>

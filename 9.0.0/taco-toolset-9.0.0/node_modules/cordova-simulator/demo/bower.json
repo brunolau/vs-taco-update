@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.14",
+    "ngCordova": "~0.1.11-alpha"
+  }
+}

@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "cordova": "9.0.0",
-    "cordova-simulate": "0.3.13"
+    "cordova-simulate": "^0.3.13"
   },
   "bundleDependencies": [
     "cordova",

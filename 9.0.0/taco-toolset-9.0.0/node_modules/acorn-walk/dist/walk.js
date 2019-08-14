@@ -416,7 +416,10 @@
     }
     c(node.source, st, "Expression");
   };
-  base.ImportSpecifier = base.ImportDefaultSpecifier = base.ImportNamespaceSpecifier = base.Identifier = base.Literal = base.Import = ignore;
+  base.ImportExpression = function (node, st, c) {
+    c(node.source, st, "Expression");
+  };
+  base.ImportSpecifier = base.ImportDefaultSpecifier = base.ImportNamespaceSpecifier = base.Identifier = base.Literal = ignore;
 
   base.TaggedTemplateExpression = function (node, st, c) {
     c(node.tag, st, "Expression");

@@ -1,0 +1,8 @@
+<div ng-class="['actionsheet', 'platform-' + device.preset.platform]">
+    <h6 ng-if="widget.title !== undefined">{{widget.title}}</h6>
+    <a ng-if="widget.addDestructiveButtonWithLabel !== undefined" class="destructive" ng-click="widget.close(0)">{{widget.addDestructiveButtonWithLabel}}</a>
+    <a ng-repeat="button in widget.buttonLabels" ng-click="widget.close($index + 1)">{{button}}</a>
+    <div class="cancelButtonContainer" ng-if="widget.addCancelButtonWithLabel !== undefined">
+        <button class="cancelButton" ng-click="widget.close(widget.buttonLabels.length + 1)">{{widget.addCancelButtonWithLabel}}</button>
+    </div>
+</div>
